@@ -63,3 +63,6 @@ select *
 from ventas_por_tienda_comparativa 
 limit 5;
  
+
+
+ 

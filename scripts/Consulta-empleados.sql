@@ -19,4 +19,9 @@ inner join city as ci using(city_id)
 inner join country as co using(country_id)
 limit 5;  
 
+#----f
+
+
+
+
 
