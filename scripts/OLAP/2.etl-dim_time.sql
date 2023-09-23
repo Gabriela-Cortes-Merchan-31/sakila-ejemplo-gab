@@ -24,4 +24,8 @@ from (
     select distinct date(rental_date) as date
     from sakila.rental
 ) as fechas
+where date not in (
+    select date_value
+    from sakila_dwh.dim_time
+)
 ;

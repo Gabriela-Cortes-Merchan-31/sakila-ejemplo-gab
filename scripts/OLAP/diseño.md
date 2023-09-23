@@ -24,6 +24,20 @@ PK: LLAVE SURROGADA
 |day_of_week_name | int     | NN             |
 |year_month       | int     | NN             |
 
+**Dim_store**
+
+| Columna         | Tiempo    | Resticciones               |
+|-----------------|-----------|----------------------------| 
+|store_key        | int       | PK, NN,auto_increment      |
+|store_id         | int       | UK, NN                     |
+|store            |varchar(20)| NN                         |
+|district         |varchar(20)| NN                         |
+|city             |varchar(50)| NN                         |
+|country          |varchar(50)| NN                         |
+|last_update      |timestamp  |NN,default CURRENT_TIMESTAMP|
+
+
+
 **Fact_Rental(Alquiler)**
 
 | Columna         | Tiempo  | Resticciones      |
@@ -31,5 +45,19 @@ PK: LLAVE SURROGADA
 |rental_key       | int(8)  | PK, NN            |
 |rental_id        | int     | UK, NN            |
 |data_key         | int     | FK(dim_tiempo), NN|
+|store_key        | int     | FK(dim_tiempo), NN|
+|customer_key     | int     | FK(dim_tiempo), NN|
 |count_rental     | int     | NN                |
+
+**dim_customes**
+
+| Columna         | Tiempo    | Resticciones               |
+|-----------------|-----------|----------------------------| 
+|customer_key     | int       | PK, NN,auto_increment      |
+|customer_id      | int       | UK, NN                     |
+|customer         |varchar(20)| NN                         |
+|district         |varchar(20)| NN                         |
+|city             |varchar(50)| NN                         |
+|country          |varchar(50)| NN                         |
+|last_update      |timestamp  |NN,default CURRENT_TIMESTAMP|
 
